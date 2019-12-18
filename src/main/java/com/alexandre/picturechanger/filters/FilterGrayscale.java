@@ -6,7 +6,7 @@ import org.opencv.imgproc.Imgproc;
 
 import static org.bytedeco.opencv.global.opencv_imgproc.cvtColor;
 
-public class filterGrayscale {
+public class FilterGrayscale {
 
     public Mat filterGrayscale(Mat image) {
         Mat result = new Mat(image.rows(), image.cols(), CvType.CV_8UC3);
