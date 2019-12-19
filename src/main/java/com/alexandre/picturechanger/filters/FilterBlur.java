@@ -14,7 +14,6 @@ import static org.bytedeco.opencv.global.opencv_imgproc.cvtColor;
 
 public class FilterBlur {
     public Mat filterBlur(Mat image, String name) throws FiltrerExecption, IOException {
-
         int size = 33;
         if(size %2 == 0){
             throw new FiltrerExecption(" ! SIZE MUST BE ODD !");
