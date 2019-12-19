@@ -12,8 +12,12 @@ package com.alexandre.picturechanger;
         import java.io.IOException;
         import java.util.Arrays;
 
-public class App {
 
+public class App {
+    /**
+     *
+     * @param args The arguments at the beginning of the code
+     */
     public static void main(String[] args) {
         System.out.println(Arrays.toString(args));
 

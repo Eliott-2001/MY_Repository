@@ -9,9 +9,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import static org.bytedeco.opencv.global.opencv_imgproc.cvtColor;
-
+/**
+ Apply black and white on an image (grayscale)
+ */
 public class FilterGrayscale {
-
+    /**
+     * @param image The image which be selected for the grayscale
+     * @param name The name of the image
+     * @return Return the image with filter
+     * @throws FiltrerExecption When the filter can't be applied
+     * @throws IOException
+     */
     public Mat filterGrayscale(Mat image, String name) throws FiltrerExecption, IOException {
         Mat result = new Mat(image.rows(), image.cols(), CvType.CV_8UC3);
         cvtColor(image, result, Imgproc.COLOR_RGB2GRAY);

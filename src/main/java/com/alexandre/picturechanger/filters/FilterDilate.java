@@ -11,8 +11,17 @@ import java.io.IOException;
 
 import static org.bytedeco.opencv.global.opencv_imgproc.dilate;
 import static org.bytedeco.opencv.global.opencv_imgproc.getStructuringElement;
-
+/**
+ Apply dilate on an image
+ */
 public class FilterDilate {
+    /**
+     * @param image The image which be selected for the dilate
+     * @param name The name of the image
+     * @return Return the image with filter
+     * @throws FiltrerExecption When the filter can't be applied
+     * @throws IOException
+     */
 
     public Mat filterDilate(Mat image, String name) throws FiltrerExecption, IOException {
         int size = 8;

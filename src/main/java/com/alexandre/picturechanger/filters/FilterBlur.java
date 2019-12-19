@@ -11,8 +11,17 @@ import java.io.IOException;
 
 import static org.bytedeco.opencv.global.opencv_imgproc.GaussianBlur;
 import static org.bytedeco.opencv.global.opencv_imgproc.cvtColor;
-
+/**
+Apply blur on an image
+*/
 public class FilterBlur {
+    /**
+     * @param image The image which be selected for the blur
+     * @param name The name of the image
+     * @return Return the image with filter
+     * @throws FiltrerExecption When the filter can't be applied
+     * @throws IOException
+     */
     public Mat filterBlur(Mat image, String name) throws FiltrerExecption, IOException {
         int size = 33;
         if(size %2 == 0){
