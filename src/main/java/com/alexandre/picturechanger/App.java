@@ -5,12 +5,14 @@ package com.alexandre.picturechanger;
         import org.bytedeco.opencv.opencv_core.Mat;
 
         import java.io.File;
+        import java.io.IOException;
 
 public class App {
 
     public static void main(String[] args) {
-        FilterBlur fb = new FilterBlur();
 
+
+        FilterBlur fb = new FilterBlur();
 
             File inputDir = new File("imgs");
             File[] files = inputDir.listFiles();
@@ -21,17 +23,16 @@ public class App {
                 Mat image = opencv_imgcodecs.imread(f.getAbsolutePath());
 
                 try{
-                    image = fb.filterBlur(image);
-                }catch (FiltrerExecption e){
+                    image = fb.filterBlur(image, f.getName());
+                }catch (FiltrerExecption | IOException e){
                   System.out.println(e.getMessage());
                 }
 
                 File outputDir = new File("output");
                 File outputFile = new File(outputDir, f.getName());
                 opencv_imgcodecs.imwrite(outputFile.getAbsolutePath(), image);
-
-                System.out.println("Les images sont bien modifiées");
             }
 
     }
+
 }
